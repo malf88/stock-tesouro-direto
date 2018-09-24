@@ -8,4 +8,4 @@
 include 'vendor/autoload.php';
 
 $foo = new StockTesouroDireto\StockTesouroDireto();
-var_dump($foo->getValuesResgate());
+var_dump($foo->findTicker(\StockTesouroDireto\StockTesouroDireto::TESOURO_IPCA_2045));
