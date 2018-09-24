@@ -1,0 +1,23 @@
+{
+    "name": "malf88/stock-tesouro-direto",
+    "description": "Pacote para consulta dos valores do tesouro direto.",
+    "type": "library",
+    "require": {
+        "php-curl-class/php-curl-class": "^8.3",
+        "php": ">=5.3.0"
+    },
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "Marco Aurélio Lima Fernandes",
+            "email": "malf88@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Curl\\": "src/Curl/",
+            "StockTesouroDireto\\":"src/StockTesouroDireto/"
+        }
+    }
+}
