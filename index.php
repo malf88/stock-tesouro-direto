@@ -7,5 +7,7 @@
  */
 include 'vendor/autoload.php';
 
-$foo = new StockTesouroDireto\StockTesouroDireto();
-var_dump($foo->getValuesResgate());
+$foo = new StockTesouroDireto\StockTesouroDireto('CPF','SENHA');
+//var_dump($foo->getTitulos());
+var_dump($foo->findTitulo(\StockTesouroDireto\StockTesouroDireto::TESOURO_IPCA_2045));
+var_dump($foo->getTitulos(\StockTesouroDireto\StockTesouroDireto::TESOURO_IPCA_2045));
