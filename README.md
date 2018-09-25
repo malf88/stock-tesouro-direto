@@ -3,9 +3,12 @@ Biblioteca para consulta de valor do tesouro direto.
 
 <h3>Como usar</h3>
 Instalar pelo composer:
-`composer require malf88/stock-tesouro-direto`
+<pre>
+composer require malf88/stock-tesouro-direto
+</pre>
 
 Código:
+<pre>
 include 'vendor/autoload.php';
 //Aqui deverá ser configurada o login e a senha do portal do investidor da BM&F Bovespa.
 $foo = new StockTesouroDireto\StockTesouroDireto('CPF','SENHA');
@@ -15,3 +18,4 @@ $titulo = $foo->findTitulo(\StockTesouroDireto\StockTesouroDireto::TESOURO_IPCA_
 
 //Listar todos os títulos
 $lista = $foo->getTitulos();
+</pre>
