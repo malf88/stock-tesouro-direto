@@ -67,12 +67,7 @@ class StockTesouroDireto
 
 
     public function getJson(){
-        //$jar = CookieJar::fromArray(['Investidor'=>'BE2A63116C0DD74E236161FB56664733D2279C8E3B5F5AC6EAE7710CD47177ABF1F7F0F4611367554D3929CC9F941B7E92905AEE8E34E4E801F751D1EF9F07AFEBF689ADDFD2B606AF886B552DDAFB575278B3CB24F1B67F'],'.bmfbovespa.com.br');
         $client = new Client(['cookies' => true]);
-        //touch(dirname(__FILE__)."/tmp/somecookie");
-
-        //chmod(dirname(__FILE__)."/tmp/somecookie",'0777');
-        //$jar1 = new FileCookieJar(dirname(__FILE__)."/tmp/somecookie");
         $jar1 = new CookieJar();
 
         /*****
@@ -80,10 +75,7 @@ class StockTesouroDireto
          */
 
         $r = $client->request('GET', 'https://tesourodireto.bmfbovespa.com.br/portalinvestidor',
-            [
-
-                'cookies' => $jar1
-            ]);
+            ['cookies' => $jar1]);
 
         $dom = new \DOMDocument();
 
@@ -128,23 +120,28 @@ class StockTesouroDireto
             ]
 
         ]);
-        //echo $request->getBody()->getContents();
+
         $domTableDados = new \DOMDocument();
         $domTableDados->loadHTML($request->getBody()->getContents());
 
         $xpath = new \DOMXPath($domTableDados);
         $table = $xpath->query('//*[@class=\'nowrap\']');
 
-
-
-
         return $table;
 
     }
 
+    public function getStatus(){
+        $result = $this->getJson();
+        return ($result->length > 1);
+    }
 
 
     private function populate($elements){
+
+        if(!$this->getStatus()){
+            return null;
+        }
         $tickers = array();
         foreach ($elements as $item) {
 
@@ -165,6 +162,7 @@ class StockTesouroDireto
     }
     public function getTitulos(){
         $elementsResgate = $this->getJson();
+
         return $this->populate($elementsResgate);
     }
 
@@ -180,9 +178,10 @@ class StockTesouroDireto
 
     /**
      * @param $ticker
-     * @return Ticker
+     * @return Titulo
      */
     public function findTitulo($tickerValue){
+
         $listTicker = $this->getTitulos();
         foreach($listTicker as $ticker){
 
