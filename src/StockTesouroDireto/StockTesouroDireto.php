@@ -32,9 +32,10 @@ class StockTesouroDireto
     const TESOURO_IPCA_2050_SEMESTRAL = 'Tesouro IPCA+ com Juros Semestrais 2050';
 
     //Constantes para Tesouro prefixado
-    const TESOURO_PREFIXADO_2019 = 'Tesouro Prefixado 2019';
     const TESOURO_PREFIXADO_2020 = 'Tesouro Prefixado 2020';
     const TESOURO_PREFIXADO_2021 = 'Tesouro Prefixado 2021';
+
+    const TESOURO_PREFIXADO_2022 = 'Tesouro Prefixado 2022';
     const TESOURO_PREFIXADO_2023 = 'Tesouro Prefixado 2023';
     const TESOURO_PREFIXADO_2025 = 'Tesouro Prefixado 2025';
     const TESOURO_PREFIXADO_2021_SEMESTRAL = 'Tesouro Prefixado com Juros Semestrais 2021';
@@ -46,6 +47,7 @@ class StockTesouroDireto
     //Constantes para Tesouro SELIC
     const TESOURO_SELIC_2021 = 'Tesouro Selic 2021';
     const TESOURO_SELIC_2023 = 'Tesouro Selic 2023';
+    const TESOURO_SELIC_2025 = 'Tesouro Selic 2025';
 
     //Constantes para Tesouro IGPM+
     const TESOURO_IGPM_2021_SEMESTRAL = 'Tesouro IGPM+ com Juros Semestrais 2021';
@@ -65,6 +67,10 @@ class StockTesouroDireto
         $this->senha = $senha;
     }
 
+    /**
+     * @return \DOMNodeList|false
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
 
     public function getJson(){
         $client = new Client(['cookies' => true]);
@@ -131,12 +137,20 @@ class StockTesouroDireto
 
     }
 
+    /**
+     * @return bool
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     public function getStatus(){
         $result = $this->getJson();
         return ($result->length > 1);
     }
 
-
+    /**
+     * @param $elements array
+     * @return array|null
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     private function populate($elements){
 
         if(!$this->getStatus()){
@@ -160,12 +174,22 @@ class StockTesouroDireto
         }
         return $tickers;
     }
+
+    /**
+     * @return array|null
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     public function getTitulos(){
         $elementsResgate = $this->getJson();
 
         return $this->populate($elementsResgate);
     }
 
+    /**
+     * @param $date
+     * @return \DateTime
+     * @throws \Exception
+     */
     private function revertDate($date){
 
         $data = explode('/',trim($date));
