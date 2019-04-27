@@ -6,7 +6,7 @@ Biblioteca para consulta de valor do tesouro direto.
 ##Usage
 ```
 $foo = new StockTesouroDireto\StockTesouroDireto('CPF','SENHA');
-$foo->getTitulos(\StockTesouroDireto\StockTesouroDireto::TESOURO_IPCA_2045);
+$foo->findTitulo(\StockTesouroDireto\StockTesouroDireto::TESOURO_IPCA_2045);
 
 $foo->getStatus();
 $foo->getTitulos();
