@@ -81,10 +81,13 @@ class StockTesouroDireto
          */
 
         $r = $client->request('GET', 'https://tesourodireto.bmfbovespa.com.br/portalinvestidor',
-            ['cookies' => $jar1]);
-
+            [
+                'cookies' => $jar1,
+                'verify' => false
+            ]);
+        
         $dom = new \DOMDocument();
-
+        //var_dump($r);
         $html = $r->getBody()->getContents();
         libxml_use_internal_errors(true);
         $dom->loadHTML($html);
@@ -111,7 +114,7 @@ class StockTesouroDireto
 
         $request = $client->request('POST','https://tesourodireto.bmfbovespa.com.br/portalinvestidor/login.aspx',[
             'form_params' => $variavel,
-
+            'verify' => false,
             'cookies' => $jar1,
             'allow_redirects' => [
                 'max'             => 10,        // allow at most 10 redirects.
@@ -143,6 +146,7 @@ class StockTesouroDireto
      */
     public function getStatus(){
         $result = $this->getJson();
+        
         return ($result->length > 1);
     }
 
