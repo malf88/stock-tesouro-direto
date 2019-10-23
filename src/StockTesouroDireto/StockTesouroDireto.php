@@ -125,6 +125,7 @@ class StockTesouroDireto
                 'track_redirects' => true
             ],
             'headers' => [
+                'X-Forwarded-For' => '172.20.141.'.rand(10,254),
                 'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36'
             ]
 
