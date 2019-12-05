@@ -80,64 +80,47 @@ class StockTesouroDireto
          * Request dos campos do form
          */
 
-        $r = $client->request('GET', 'https://tesourodireto.bmfbovespa.com.br/portalinvestidor',
-            [
-                'cookies' => $jar1,
-                'verify' => false
-            ]);
+        $r = $client->request('GET', 'http://www.tesouro.fazenda.gov.br/tesouro-direto-precos-e-taxas-dos-titulos');
         
         $dom = new \DOMDocument();
         //var_dump($r);
         $html = $r->getBody()->getContents();
         libxml_use_internal_errors(true);
+
         $dom->loadHTML($html);
         libxml_clear_errors();
 
-        $camposRequeridos = $dom->getElementById('BodyContent_hdnCamposRequeridos')->getAttribute('value');
-        $camposViewState = $dom->getElementById('__VIEWSTATE')->getAttribute('value');
-        $camposViewStateGeneration = $dom->getElementById('__VIEWSTATEGENERATOR')->getAttribute('value');
-        $camposViewEventValidation = $dom->getElementById('__EVENTVALIDATION')->getAttribute('value');
-        //die();
-        $variavel = [
-                        'ctl00$BodyContent$txtLogin' => $this->getLogin(),
-                        'ctl00$BodyContent$txtSenha'=> $this->getSenha(),
-                        'ctl00$BodyContent$btnLogar'=>'Entrar',
-                        'ctl00$BodyContent$hdnCamposRequeridos'=>$camposRequeridos,
-                        '__VIEWSTATEGENERATOR' => $camposViewStateGeneration,
-                        '__EVENTVALIDATION' => $camposViewEventValidation,
-                        '__VIEWSTATE' => $camposViewState
-                    ];
-        /***
-         * Request do login
-         */
+        $domXPath = new \DOMXPath($dom);
 
 
-        $request = $client->request('POST','https://tesourodireto.bmfbovespa.com.br/portalinvestidor/login.aspx',[
-            'form_params' => $variavel,
-            'verify' => false,
-            'cookies' => $jar1,
-            'allow_redirects' => [
-                'max'             => 10,        // allow at most 10 redirects.
-                'strict'          => true,      // use "strict" RFC compliant redirects.
-                'referer'         => true,      // add a Referer header
-                'protocols'       => ['https'], // only allow https URLs
-                //'on_redirect'     => $onRedirect,
-                'track_redirects' => true
-            ],
-            'headers' => [
-                'X-Forwarded-For' => '172.20.141.'.rand(10,254),
-                'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36'
-            ]
 
-        ]);
+        $listVenda = $domXPath->query("//*[contains(@class, 'sanfonado')]//*[contains(@class, 'camposTesouroDireto')]");
 
-        $domTableDados = new \DOMDocument();
-        $domTableDados->loadHTML($request->getBody()->getContents());
+        var_dump($listVenda);
 
-        $xpath = new \DOMXPath($domTableDados);
-        $table = $xpath->query('//*[@class=\'nowrap\']');
+        $listCompra = $domXPath->query("//*[contains(@class, 'tabelaPrecoseTaxas') and not(contains(@class, 'sanfonado'))]//*[contains(@class, 'camposTesouroDireto')]");
+        var_dump($listCompra);
 
-        return $table;
+        die();
+
+        for($i = 0;$i < $list->length;$i++){
+            $campos = $list->item($i)->childNodes;
+            /**
+             * 0 - Ticker
+             * 2 - Vencimento
+             * 4 - Taxa
+             * 6 - Valor minimo
+             * 8 - Valor
+             */
+            print_r($campos->item(0));
+        }
+
+
+
+
+
+
+        return $html;
 
     }
 
