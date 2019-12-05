@@ -1,0 +1,459 @@
+[Wed Dec 04 15:55:02.792382 2019] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.2.23 configured -- resuming normal operations
+[Wed Dec 04 15:55:02.793140 2019] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Dec 04 15:58:04.959955 2019] [php7:notice] [pid 21] [client 172.19.0.1:52386] PHP Fatal error:  Uncaught GuzzleHttp\\Exception\\ConnectException: cURL error 35: error:141A318A:SSL routines:tls_process_ske_dhe:dh key too small (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) in /var/www/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:185\nStack trace:\n#0 /var/www/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(149): GuzzleHttp\\Handler\\CurlFactory::createRejection(Object(GuzzleHttp\\Handler\\EasyHandle), Array)\n#1 /var/www/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(102): GuzzleHttp\\Handler\\CurlFactory::finishError(Object(GuzzleHttp\\Handler\\CurlHandler), Object(GuzzleHttp\\Handler\\EasyHandle), Object(GuzzleHttp\\Handler\\CurlFactory))\n#2 /var/www/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php(43): GuzzleHttp\\Handler\\CurlFactory::finish(Object(GuzzleHttp\\Handler\\CurlHandler), Object(GuzzleHttp\\Handler\\EasyHandle), Object(GuzzleHttp\\Handler\\CurlFactory))\n#3 /var/www/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(28): GuzzleHttp\\Handler\\CurlHandler->__invoke(Object(GuzzleHttp\\Psr7\\Re in /var/www/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php on line 185
+[Wed Dec 04 15:58:28.023404 2019] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+[Wed Dec 04 15:58:40.926175 2019] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.2.23 configured -- resuming normal operations
+[Wed Dec 04 15:58:40.927607 2019] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Dec 04 21:21:10.597603 2019] [php7:notice] [pid 16] [client 172.19.0.1:52390] PHP Fatal error:  Uncaught GuzzleHttp\\Exception\\ConnectException: cURL error 35: error:141A318A:SSL routines:tls_process_ske_dhe:dh key too small (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) in /var/www/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:185\nStack trace:\n#0 /var/www/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(149): GuzzleHttp\\Handler\\CurlFactory::createRejection(Object(GuzzleHttp\\Handler\\EasyHandle), Array)\n#1 /var/www/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(102): GuzzleHttp\\Handler\\CurlFactory::finishError(Object(GuzzleHttp\\Handler\\CurlHandler), Object(GuzzleHttp\\Handler\\EasyHandle), Object(GuzzleHttp\\Handler\\CurlFactory))\n#2 /var/www/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php(43): GuzzleHttp\\Handler\\CurlFactory::finish(Object(GuzzleHttp\\Handler\\CurlHandler), Object(GuzzleHttp\\Handler\\EasyHandle), Object(GuzzleHttp\\Handler\\CurlFactory))\n#3 /var/www/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(28): GuzzleHttp\\Handler\\CurlHandler->__invoke(Object(GuzzleHttp\\Psr7\\Re in /var/www/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php on line 185
+[Wed Dec 04 22:15:57.868029 2019] [php7:notice] [pid 18] [client 172.19.0.1:52450] PHP Fatal error:  Uncaught Error: Class 'StockTesouroDireto\\pQuery' not found in /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(104): StockTesouroDireto\\StockTesouroDireto->getJson()\n#1 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#2 {main}\n  thrown in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 22:23:33.677685 2019] [php7:notice] [pid 18] [client 172.19.0.1:52468] PHP Fatal error:  Uncaught Error: Call to undefined method DOMDocument::html() in /var/www/src/StockTesouroDireto/StockTesouroDireto.php:90\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(104): StockTesouroDireto\\StockTesouroDireto->getJson()\n#1 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#2 {main}\n  thrown in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 90
+[Wed Dec 04 22:46:34.937078 2019] [php7:notice] [pid 31] [client 172.19.0.1:52568] PHP Warning:  DOMDocument::loadHTML(): Empty string supplied as input in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 93
+[Wed Dec 04 22:46:34.981786 2019] [php7:notice] [pid 31] [client 172.19.0.1:52568] PHP Stack trace:
+[Wed Dec 04 22:46:34.982497 2019] [php7:notice] [pid 31] [client 172.19.0.1:52568] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 22:46:34.983015 2019] [php7:notice] [pid 31] [client 172.19.0.1:52568] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 22:46:34.983551 2019] [php7:notice] [pid 31] [client 172.19.0.1:52568] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:109
+[Wed Dec 04 22:46:34.984074 2019] [php7:notice] [pid 31] [client 172.19.0.1:52568] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:93
+[Wed Dec 04 22:50:20.297460 2019] [php7:notice] [pid 22] [client 172.19.0.1:52588] PHP Fatal error:  Uncaught Error: Call to undefined method DOMDocument::query() in /var/www/src/StockTesouroDireto/StockTesouroDireto.php:94\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(109): StockTesouroDireto\\StockTesouroDireto->getJson()\n#1 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#2 {main}\n  thrown in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 94
+[Wed Dec 04 22:50:53.019937 2019] [php7:notice] [pid 32] [client 172.19.0.1:52594] PHP Fatal error:  Uncaught Error: Call to undefined method DOMDocument::query() in /var/www/src/StockTesouroDireto/StockTesouroDireto.php:94\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(109): StockTesouroDireto\\StockTesouroDireto->getJson()\n#1 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#2 {main}\n  thrown in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 94
+[Wed Dec 04 22:52:00.058060 2019] [php7:notice] [pid 18] [client 172.19.0.1:52598] PHP Fatal error:  Uncaught Error: Call to undefined method DOMDocument::query() in /var/www/src/StockTesouroDireto/StockTesouroDireto.php:94\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(109): StockTesouroDireto\\StockTesouroDireto->getJson()\n#1 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#2 {main}\n  thrown in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 94
+[Wed Dec 04 22:52:38.508238 2019] [php7:notice] [pid 20] [client 172.19.0.1:52606] PHP Fatal error:  Uncaught Error: Call to undefined method DOMDocument::query() in /var/www/src/StockTesouroDireto/StockTesouroDireto.php:94\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(109): StockTesouroDireto\\StockTesouroDireto->getJson()\n#1 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#2 {main}\n  thrown in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 94
+[Wed Dec 04 22:52:42.652077 2019] [php7:notice] [pid 20] [client 172.19.0.1:52606] PHP Fatal error:  Uncaught Error: Call to undefined method DOMDocument::query() in /var/www/src/StockTesouroDireto/StockTesouroDireto.php:94\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(109): StockTesouroDireto\\StockTesouroDireto->getJson()\n#1 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#2 {main}\n  thrown in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 94
+[Wed Dec 04 22:53:17.927332 2019] [php7:notice] [pid 19] [client 172.19.0.1:52614] PHP Fatal error:  Uncaught Error: Class 'StockTesouroDireto\\DomXPath' not found in /var/www/src/StockTesouroDireto/StockTesouroDireto.php:93\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(109): StockTesouroDireto\\StockTesouroDireto->getJson()\n#1 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#2 {main}\n  thrown in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 93
+[Wed Dec 04 22:53:25.969104 2019] [php7:notice] [pid 34] [client 172.19.0.1:52612] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to DOMXPath::__construct() must be an instance of DOMDocument, string given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php:93\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(93): DOMXPath->__construct('\\n\\t<tbody><tr cl...')\n#1 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(109): StockTesouroDireto\\StockTesouroDireto->getJson()\n#2 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#3 {main}\n  thrown in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 93
+[Wed Dec 04 22:54:06.881208 2019] [php7:notice] [pid 33] [client 172.19.0.1:52624] PHP Fatal error:  Uncaught Error: Call to undefined method DOMDocument::query() in /var/www/src/StockTesouroDireto/StockTesouroDireto.php:94\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(109): StockTesouroDireto\\StockTesouroDireto->getJson()\n#1 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#2 {main}\n  thrown in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 94
+[Wed Dec 04 22:55:21.972098 2019] [php7:notice] [pid 34] [client 172.19.0.1:52648] PHP Warning:  DOMNodeList::item() expects exactly 1 parameter, 0 given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 95
+[Wed Dec 04 22:55:21.985041 2019] [php7:notice] [pid 34] [client 172.19.0.1:52648] PHP Stack trace:
+[Wed Dec 04 22:55:21.985723 2019] [php7:notice] [pid 34] [client 172.19.0.1:52648] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 22:55:21.986492 2019] [php7:notice] [pid 34] [client 172.19.0.1:52648] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 22:55:21.986950 2019] [php7:notice] [pid 34] [client 172.19.0.1:52648] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:109
+[Wed Dec 04 22:55:21.987508 2019] [php7:notice] [pid 34] [client 172.19.0.1:52648] PHP   4. DOMNodeList->item() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:95
+[Wed Dec 04 23:10:18.861169 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:18.894648 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:18.895432 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:18.896031 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:18.897542 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:18.898082 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:18.898663 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:18.899137 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:18.899616 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:18.900051 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:18.900491 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:18.900928 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:18.901501 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:18.901904 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:18.902336 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:18.902685 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:18.903019 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:18.903466 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:18.903998 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:18.904386 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:18.904817 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:18.905249 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:18.905626 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:18.906070 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:18.906532 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:18.906981 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:18.907348 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:18.907841 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:18.908208 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:18.908694 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:18.909513 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:18.910032 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:18.910501 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:18.910916 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:18.911508 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:18.911923 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:18.912772 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:18.913149 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:18.913517 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:18.913817 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:18.914113 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:18.914474 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:18.914907 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:18.915172 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:18.915451 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:18.915726 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:18.916009 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:18.916296 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:18.916702 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:18.916966 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:18.917242 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:18.917547 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:18.917850 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:18.918125 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:18.918470 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:18.918734 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:18.919011 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:18.919330 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:18.919656 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:18.920005 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:24.005616 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:24.006788 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:24.007516 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:24.008112 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:24.008711 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:24.009365 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:24.010341 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:24.010944 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:24.011565 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:24.012137 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:24.013010 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:24.013539 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:24.014332 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:24.014995 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:24.015677 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:24.017242 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:24.018036 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:24.018508 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:24.019090 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:24.019480 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:24.019942 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:24.020423 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:24.020875 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:24.021315 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:24.021901 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:24.022381 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:24.022982 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:24.023709 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:24.024296 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:24.024814 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:24.025353 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:24.025870 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:24.026381 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:24.026955 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:24.027408 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:24.027897 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:24.028606 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:24.029056 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:24.029508 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:24.030136 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:24.030941 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:24.031628 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:24.032901 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:24.033573 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:24.034102 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:24.034524 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:24.034948 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:24.035385 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:24.035888 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:24.036323 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:24.036743 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:24.037166 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:24.037593 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:24.038188 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:10:24.039317 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Warning:  explode() expects parameter 2 to be string, object given in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 96
+[Wed Dec 04 23:10:24.040150 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP Stack trace:
+[Wed Dec 04 23:10:24.040894 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:10:24.041610 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:10:24.042365 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:114
+[Wed Dec 04 23:10:24.043134 2019] [php7:notice] [pid 33] [client 172.19.0.1:52684] PHP   4. explode() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:96
+[Wed Dec 04 23:21:23.637825 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Warning:  DOMDocument::loadHTML(): Tag header invalid in Entity, line: 1419 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:21:23.648242 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Stack trace:
+[Wed Dec 04 23:21:23.648798 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:21:23.649172 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:21:23.649504 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:128
+[Wed Dec 04 23:21:23.649839 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:21:23.650598 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Warning:  DOMDocument::loadHTML(): Tag nav invalid in Entity, line: 2613 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:21:23.650942 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Stack trace:
+[Wed Dec 04 23:21:23.651284 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:21:23.651642 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:21:23.652126 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:128
+[Wed Dec 04 23:21:23.652785 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:21:23.654019 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Warning:  DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 3686 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:21:23.654602 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Stack trace:
+[Wed Dec 04 23:21:23.655596 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:21:23.655969 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:21:23.656304 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:128
+[Wed Dec 04 23:21:23.656682 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:21:23.657186 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Warning:  DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 3686 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:21:23.657492 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Stack trace:
+[Wed Dec 04 23:21:23.657785 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:21:23.658070 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:21:23.658359 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:128
+[Wed Dec 04 23:21:23.658631 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:21:23.658978 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Warning:  DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 3686 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:21:23.659262 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Stack trace:
+[Wed Dec 04 23:21:23.659547 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:21:23.659830 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:21:23.660122 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:128
+[Wed Dec 04 23:21:23.660371 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:21:23.660881 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Warning:  DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 3686 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:21:23.661138 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Stack trace:
+[Wed Dec 04 23:21:23.661389 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:21:23.661645 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:21:23.661901 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:128
+[Wed Dec 04 23:21:23.662204 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:21:23.662580 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Warning:  DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 3686 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:21:23.662933 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Stack trace:
+[Wed Dec 04 23:21:23.663343 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:21:23.663727 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:21:23.664244 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:128
+[Wed Dec 04 23:21:23.664698 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:21:23.665213 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Warning:  DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 3686 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:21:23.665586 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Stack trace:
+[Wed Dec 04 23:21:23.666035 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:21:23.666361 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:21:23.666665 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:128
+[Wed Dec 04 23:21:23.666956 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:21:23.667326 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Warning:  DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 3686 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:21:23.667616 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Stack trace:
+[Wed Dec 04 23:21:23.667941 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:21:23.668265 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:21:23.668568 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:128
+[Wed Dec 04 23:21:23.668864 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:21:23.670924 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Warning:  DOMDocument::loadHTML(): Tag footer invalid in Entity, line: 4667 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:21:23.671468 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Stack trace:
+[Wed Dec 04 23:21:23.671769 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:21:23.672060 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:21:23.672341 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:128
+[Wed Dec 04 23:21:23.672594 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:21:23.672949 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Warning:  DOMDocument::loadHTML(): Tag runtime-portlet invalid in Entity, line: 4671 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:21:23.673314 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Stack trace:
+[Wed Dec 04 23:21:23.673589 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:21:23.673841 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:21:23.674087 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:128
+[Wed Dec 04 23:21:23.674333 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:21:23.674743 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Warning:  DOMDocument::loadHTML(): htmlParseEntityRef: no name in Entity, line: 5312 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:21:23.675025 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Stack trace:
+[Wed Dec 04 23:21:23.675296 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:21:23.675542 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:21:23.675809 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:128
+[Wed Dec 04 23:21:23.676049 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:21:23.676796 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Warning:  DOMDocument::loadHTML(): Unexpected end tag : b in Entity, line: 6271 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:21:23.677102 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP Stack trace:
+[Wed Dec 04 23:21:23.677358 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:21:23.677744 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:21:23.678044 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:128
+[Wed Dec 04 23:21:23.678336 2019] [php7:notice] [pid 32] [client 172.19.0.1:52784] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:27:16.271402 2019] [php7:notice] [pid 18] [client 172.19.0.1:52792] PHP Warning:  DOMDocument::loadHTML(): Document is empty in Entity, line: 19 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 92
+[Wed Dec 04 23:27:16.310304 2019] [php7:notice] [pid 18] [client 172.19.0.1:52792] PHP Stack trace:
+[Wed Dec 04 23:27:16.310934 2019] [php7:notice] [pid 18] [client 172.19.0.1:52792] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:27:16.311533 2019] [php7:notice] [pid 18] [client 172.19.0.1:52792] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:27:16.312050 2019] [php7:notice] [pid 18] [client 172.19.0.1:52792] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:132
+[Wed Dec 04 23:27:16.312593 2019] [php7:notice] [pid 18] [client 172.19.0.1:52792] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:92
+[Wed Dec 04 23:37:57.164441 2019] [php7:notice] [pid 36] [client 172.19.0.1:52924] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 98570240 bytes) in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 90
+[Wed Dec 04 23:37:57.180462 2019] [php7:notice] [pid 36] [client 172.19.0.1:52924] PHP Stack trace:
+[Wed Dec 04 23:37:57.181196 2019] [php7:notice] [pid 36] [client 172.19.0.1:52924] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:37:57.182210 2019] [php7:notice] [pid 36] [client 172.19.0.1:52924] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:37:57.182649 2019] [php7:notice] [pid 36] [client 172.19.0.1:52924] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:132
+[Wed Dec 04 23:37:57.183148 2019] [php7:notice] [pid 36] [client 172.19.0.1:52924] PHP   4. print_r() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:90
+[Wed Dec 04 23:44:33.443011 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Warning:  DOMDocument::loadHTML(): Tag header invalid in Entity, line: 1419 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:44:33.451029 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Stack trace:
+[Wed Dec 04 23:44:33.451829 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:44:33.452542 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:44:33.454303 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:134
+[Wed Dec 04 23:44:33.454912 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:44:33.456108 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Warning:  DOMDocument::loadHTML(): Tag nav invalid in Entity, line: 2613 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:44:33.456749 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Stack trace:
+[Wed Dec 04 23:44:33.457468 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:44:33.458022 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:44:33.458684 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:134
+[Wed Dec 04 23:44:33.459190 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:44:33.460105 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Warning:  DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 3686 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:44:33.460725 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Stack trace:
+[Wed Dec 04 23:44:33.461859 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:44:33.462799 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:44:33.463556 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:134
+[Wed Dec 04 23:44:33.464185 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:44:33.465046 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Warning:  DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 3686 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:44:33.465585 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Stack trace:
+[Wed Dec 04 23:44:33.466388 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:44:33.466827 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:44:33.467334 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:134
+[Wed Dec 04 23:44:33.467751 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:44:33.468278 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Warning:  DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 3686 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:44:33.468816 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Stack trace:
+[Wed Dec 04 23:44:33.469233 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:44:33.469648 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:44:33.470176 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:134
+[Wed Dec 04 23:44:33.471354 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:44:33.472838 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Warning:  DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 3686 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:44:33.473694 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Stack trace:
+[Wed Dec 04 23:44:33.474258 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:44:33.474844 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:44:33.475347 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:134
+[Wed Dec 04 23:44:33.476956 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:44:33.478405 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Warning:  DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 3686 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:44:33.479079 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Stack trace:
+[Wed Dec 04 23:44:33.479527 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:44:33.479910 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:44:33.480255 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:134
+[Wed Dec 04 23:44:33.480656 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:44:33.481443 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Warning:  DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 3686 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:44:33.482012 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Stack trace:
+[Wed Dec 04 23:44:33.482686 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:44:33.483548 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:44:33.484412 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:134
+[Wed Dec 04 23:44:33.485804 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:44:33.487095 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Warning:  DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 3686 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:44:33.487772 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Stack trace:
+[Wed Dec 04 23:44:33.488266 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:44:33.488709 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:44:33.489124 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:134
+[Wed Dec 04 23:44:33.489627 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:44:33.493607 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Warning:  DOMDocument::loadHTML(): Tag footer invalid in Entity, line: 4667 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:44:33.494763 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Stack trace:
+[Wed Dec 04 23:44:33.495377 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:44:33.495937 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:44:33.496669 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:134
+[Wed Dec 04 23:44:33.497539 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:44:33.498659 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Warning:  DOMDocument::loadHTML(): Tag runtime-portlet invalid in Entity, line: 4671 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:44:33.499424 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Stack trace:
+[Wed Dec 04 23:44:33.500078 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:44:33.500668 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:44:33.501581 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:134
+[Wed Dec 04 23:44:33.502444 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:44:33.503372 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Warning:  DOMDocument::loadHTML(): htmlParseEntityRef: no name in Entity, line: 5312 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:44:33.503968 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Stack trace:
+[Wed Dec 04 23:44:33.504696 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:44:33.505531 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:44:33.506091 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:134
+[Wed Dec 04 23:44:33.506716 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:44:33.508157 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Warning:  DOMDocument::loadHTML(): Unexpected end tag : b in Entity, line: 6271 in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 88
+[Wed Dec 04 23:44:33.509068 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP Stack trace:
+[Wed Dec 04 23:44:33.510087 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   1. {main}() /var/www/index.php:0
+[Wed Dec 04 23:44:33.510990 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Wed Dec 04 23:44:33.511659 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:134
+[Wed Dec 04 23:44:33.512230 2019] [php7:notice] [pid 20] [client 172.19.0.1:52936] PHP   4. DOMDocument->loadHTML() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:88
+[Wed Dec 04 23:49:44.477623 2019] [php7:notice] [pid 16] [client 172.19.0.1:52960] PHP Fatal error:  Uncaught Error: Call to undefined method DOMElement::query() in /var/www/src/StockTesouroDireto/StockTesouroDireto.php:99\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(133): StockTesouroDireto\\StockTesouroDireto->getJson()\n#1 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#2 {main}\n  thrown in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 99
+[Wed Dec 04 23:52:13.187555 2019] [php7:notice] [pid 20] [client 172.19.0.1:52966] PHP Fatal error:  Uncaught Error: Call to a member function item() on boolean in /var/www/src/StockTesouroDireto/StockTesouroDireto.php:99\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(133): StockTesouroDireto\\StockTesouroDireto->getJson()\n#1 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#2 {main}\n  thrown in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 99
+[Wed Dec 04 23:55:26.957371 2019] [php7:notice] [pid 34] [client 172.19.0.1:53004] PHP Parse error:  syntax error, unexpected 'die' (T_EXIT) in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 100
+[Thu Dec 05 00:02:43.021459 2019] [php7:notice] [pid 22] [client 172.19.0.1:53050] PHP Parse error:  syntax error, unexpected '}' in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 103
+[Thu Dec 05 00:08:17.188388 2019] [php7:notice] [pid 36] [client 172.19.0.1:53078] PHP Fatal error:  Uncaught Error: Call to undefined method DOMElement::item() in /var/www/src/StockTesouroDireto/StockTesouroDireto.php:103\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(136): StockTesouroDireto\\StockTesouroDireto->getJson()\n#1 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#2 {main}\n  thrown in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 103
+[Thu Dec 05 00:16:17.190429 2019] [php7:notice] [pid 36] [client 172.19.0.1:53108] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 105
+[Thu Dec 05 00:19:41.905963 2019] [php7:notice] [pid 20] [client 172.19.0.1:53122] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 103
+[Thu Dec 05 00:19:41.947226 2019] [php7:notice] [pid 20] [client 172.19.0.1:53122] PHP Stack trace:
+[Thu Dec 05 00:19:41.948249 2019] [php7:notice] [pid 20] [client 172.19.0.1:53122] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 00:19:41.949791 2019] [php7:notice] [pid 20] [client 172.19.0.1:53122] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 00:19:41.950960 2019] [php7:notice] [pid 20] [client 172.19.0.1:53122] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:138
+[Thu Dec 05 09:59:55.234799 2019] [php7:notice] [pid 34] [client 172.19.0.1:53224] PHP Parse error:  syntax error, unexpected '}' in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 122
+[Thu Dec 05 10:00:09.076854 2019] [php7:notice] [pid 91] [client 172.19.0.1:53228] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to StockTesouroDireto\\Titulo::__construct() must be an instance of DateTime or null, instance of DOMElement given, called in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 120 and defined in /var/www/src/StockTesouroDireto/Titulo.php:48\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(120): StockTesouroDireto\\Titulo->__construct(Object(DOMElement), Object(DOMElement), NULL, Object(DOMElement), NULL, NULL)\n#1 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(146): StockTesouroDireto\\StockTesouroDireto->getJson()\n#2 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#3 {main}\n  thrown in /var/www/src/StockTesouroDireto/Titulo.php on line 48
+[Thu Dec 05 10:01:02.805952 2019] [php7:notice] [pid 36] [client 172.19.0.1:53234] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to StockTesouroDireto\\Titulo::__construct() must be an instance of DateTime or null, string given, called in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 120 and defined in /var/www/src/StockTesouroDireto/Titulo.php:48\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(120): StockTesouroDireto\\Titulo->__construct('Tesouro IPCA+ 2...', '15/08/2024', NULL, '2,43', NULL, NULL)\n#1 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(146): StockTesouroDireto\\StockTesouroDireto->getJson()\n#2 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#3 {main}\n  thrown in /var/www/src/StockTesouroDireto/Titulo.php on line 48
+[Thu Dec 05 15:31:10.793992 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.815138 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.815708 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.816137 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.816592 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.817244 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.817635 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.818094 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.818537 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.819156 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.819767 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.820146 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.820545 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.820934 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.821321 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.821887 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.822272 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.822686 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.823118 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.823465 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.823999 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.824334 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.824663 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.825566 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.825993 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.826588 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.827020 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.827502 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.828093 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.828595 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.829321 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.829762 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.830228 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.830564 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.830896 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.831347 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.831657 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.831978 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.832296 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.832625 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.833049 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.833356 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.833666 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.833950 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.834276 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.834678 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.834974 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.835256 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.835538 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.835838 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.836415 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.836790 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.837193 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.837585 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.838105 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.838687 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.838995 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.839287 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.839629 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.839940 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.840447 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.840740 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.841029 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.841298 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.841589 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.841990 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.842280 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.842566 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.842869 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.843164 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.843548 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.843835 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.844218 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.844539 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.844859 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.845323 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.845646 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.845985 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.846315 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.846635 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.847103 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.847425 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.847739 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.848040 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.848367 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.848825 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.849155 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.849505 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.849842 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.850177 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.850667 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.850998 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.851339 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.851657 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.908631 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.909396 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.909841 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.910285 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.910727 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.911161 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.911674 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.912066 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.912490 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.912901 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.913301 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.913930 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.914330 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.914720 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.915108 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.915522 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.916010 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.916441 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.916846 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.917325 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.917834 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.918825 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 126
+[Thu Dec 05 15:31:10.919803 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.920323 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.920783 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.921416 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.922037 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Warning:  Illegal offset type in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 136
+[Thu Dec 05 15:31:10.922419 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Stack trace:
+[Thu Dec 05 15:31:10.922793 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   1. {main}() /var/www/index.php:0
+[Thu Dec 05 15:31:10.923146 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   2. StockTesouroDireto\\StockTesouroDireto->getStatus() /var/www/index.php:15
+[Thu Dec 05 15:31:10.923470 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP   3. StockTesouroDireto\\StockTesouroDireto->getJson() /var/www/src/StockTesouroDireto/StockTesouroDireto.php:155
+[Thu Dec 05 15:31:10.924537 2019] [php7:notice] [pid 16] [client 172.19.0.1:53240] PHP Fatal error:  Uncaught Error: Call to a member function setRentabilidade() on null in /var/www/src/StockTesouroDireto/StockTesouroDireto.php:136\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(155): StockTesouroDireto\\StockTesouroDireto->getJson()\n#1 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#2 {main}\n  thrown in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 136
+[Thu Dec 05 15:32:16.632449 2019] [php7:notice] [pid 20] [client 172.19.0.1:53246] PHP Fatal error:  Uncaught Error: Call to undefined method StockTesouroDireto\\Titulo::setRentabilidade() in /var/www/src/StockTesouroDireto/StockTesouroDireto.php:137\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(156): StockTesouroDireto\\StockTesouroDireto->getJson()\n#1 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#2 {main}\n  thrown in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 137
+[Thu Dec 05 15:33:17.285893 2019] [php7:notice] [pid 34] [client 172.19.0.1:53250] PHP Fatal error:  Uncaught Error: Call to undefined method StockTesouroDireto\\Titulo::setValor() in /var/www/src/StockTesouroDireto/StockTesouroDireto.php:138\nStack trace:\n#0 /var/www/src/StockTesouroDireto/StockTesouroDireto.php(156): StockTesouroDireto\\StockTesouroDireto->getJson()\n#1 /var/www/index.php(15): StockTesouroDireto\\StockTesouroDireto->getStatus()\n#2 {main}\n  thrown in /var/www/src/StockTesouroDireto/StockTesouroDireto.php on line 138
