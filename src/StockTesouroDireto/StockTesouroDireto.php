@@ -53,37 +53,34 @@ class StockTesouroDireto
     const TESOURO_IGPM_2021_SEMESTRAL = 'Tesouro IGPM+ com Juros Semestrais 2021';
     const TESOURO_IGPM_2031_SEMESTRAL = 'Tesouro IGPM+ com Juros Semestrais 2031';
 
-    private $login = '';
-    private $senha = '';
 
+    const COLUNA_TICKER = 0;
+    const COLUNA_VENCIMENTO = 2;
+    const COLUNA_TAXA = 4;
+    const COLUNA_VALOR_MINIMO = 6;
+    const COLUNA_VALOR_VENDA = 6;
+    const COLUNA_VALOR_COMPRA = 8;
+    const URL = 'http://www.tesouro.fazenda.gov.br/tesouro-direto-precos-e-taxas-dos-titulos';
     /**
-     * StockTesouroDireto constructor.
-     * @param string $login
-     * @param string $senha
+     * 0 - Ticker
+     * 2 - Vencimento
+     * 4 - Taxa
+     * 6 - Valor minimo
+     * 8 - Valor
      */
-    public function __construct($login, $senha)
-    {
-        $this->login = $login;
-        $this->senha = $senha;
-    }
+
 
     /**
      * @return \DOMNodeList|false
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
 
-    public function getJson(){
-        $client = new Client(['cookies' => true]);
-        $jar1 = new CookieJar();
-
-        /*****
-         * Request dos campos do form
-         */
-
-        $r = $client->request('GET', 'http://www.tesouro.fazenda.gov.br/tesouro-direto-precos-e-taxas-dos-titulos');
+    public function getTitulos(){
+        $client = new Client();
+        $r = $client->request('GET', self::URL);
         
         $dom = new \DOMDocument();
-        //var_dump($r);
+
         $html = $r->getBody()->getContents();
         libxml_use_internal_errors(true);
 
@@ -96,82 +93,64 @@ class StockTesouroDireto
 
         $listVenda = $domXPath->query("//*[contains(@class, 'sanfonado')]//*[contains(@class, 'camposTesouroDireto')]");
 
-        var_dump($listVenda);
 
         $listCompra = $domXPath->query("//*[contains(@class, 'tabelaPrecoseTaxas') and not(contains(@class, 'sanfonado'))]//*[contains(@class, 'camposTesouroDireto')]");
-        var_dump($listCompra);
 
-        die();
+        $tickers = [];
 
-        for($i = 0;$i < $list->length;$i++){
-            $campos = $list->item($i)->childNodes;
-            /**
-             * 0 - Ticker
-             * 2 - Vencimento
-             * 4 - Taxa
-             * 6 - Valor minimo
-             * 8 - Valor
-             */
-            print_r($campos->item(0));
+        for($i = 0;$i < $listVenda->length;$i++){
+            $campos = $listVenda->item($i)->childNodes;
+            $ticker = $campos->item(self::COLUNA_TICKER)->nodeValue;
+            $vencimento = $this->revertDate($campos->item(self::COLUNA_VENCIMENTO)->nodeValue);
+            $taxa = $this->getFloatValue($campos->item(self::COLUNA_TAXA)->nodeValue);
+
+            $valor = $this->getFloatValue($campos->item(self::COLUNA_VALOR_VENDA)->nodeValue);
+
+            $tickers[$ticker] = new Titulo($ticker,$vencimento,null,$taxa,0.00,$valor);
+
         }
 
 
+        for($i = 0;$i < $listCompra->length;$i++){
+            $campos = $listCompra->item($i)->childNodes;
 
+            $taxa = $this->getFloatValue($campos->item(self::COLUNA_TAXA)->nodeValue);
+            $valor = $this->getFloatValue($campos->item(self::COLUNA_VALOR_COMPRA)->nodeValue);
 
+            $ticker = $campos->item(self::COLUNA_TICKER)->nodeValue;
+            $tickers[$ticker]->setRentabilidade($taxa);
+            $tickers[$ticker]->setPrecoCompra($valor);
+        }
 
-
-        return $html;
+        return $tickers;
 
     }
 
     /**
      * @return bool
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @deprecated
      */
+
     public function getStatus(){
-        $result = $this->getJson();
+        //$result = $this->getJson();
         
-        return ($result->length > 1);
+        //return ($result->length > 1);
+        return true;
     }
 
     /**
      * @param $elements array
      * @return array|null
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @deprecated
      */
     private function populate($elements){
 
-        if(!$this->getStatus()){
-            return null;
-        }
-        $tickers = array();
-        foreach ($elements as $item) {
 
-            $td = $item->getElementsByTagName('td');
-
-            if($td->length == 1) continue;
-            $tickers[] = new Titulo(
-                                    trim($td[0]->nodeValue),
-                                    $this->revertDate(trim($td[1]->nodeValue)),
-                                    (float)str_replace(array(','),array('.'),trim($td[2]->nodeValue)),
-                                    (float)str_replace(array(','),array('.'),trim($td[3]->nodeValue)),
-                                    (float)str_replace(array('.','R$',','),array('','','.'),trim($td[4]->nodeValue)),
-                                    (float)str_replace(array('.','R$',','),array('','','.'),trim($td[5]->nodeValue))
-                                    );
-
-        }
-        return $tickers;
     }
 
-    /**
-     * @return array|null
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    public function getTitulos(){
-        $elementsResgate = $this->getJson();
 
-        return $this->populate($elementsResgate);
-    }
 
     /**
      * @param $date
@@ -195,45 +174,19 @@ class StockTesouroDireto
     public function findTitulo($tickerValue){
 
         $listTicker = $this->getTitulos();
-        foreach($listTicker as $ticker){
-
-          //  var_dump($ticker);
-            if($ticker->getTitulo() == $tickerValue){
-                return $ticker;
-            }
+        if(isset($listTicker[$tickerValue])){
+            return $listTicker[$tickerValue];
+        }else{
+            throw new \Exception('Ticker não encontrado');
         }
+
     }
 
-    /**
-     * @return string
-     */
-    public function getLogin()
-    {
-        return $this->login;
-    }
 
-    /**
-     * @param string $login
-     */
-    public function setLogin($login)
-    {
-        $this->login = $login;
-    }
+    public function getFloatValue($valor){
 
-    /**
-     * @return string
-     */
-    public function getSenha()
-    {
-        return $this->senha;
-    }
-
-    /**
-     * @param string $senha
-     */
-    public function setSenha($senha)
-    {
-        $this->senha = $senha;
+        $value = str_replace(array('R$','.'),array('',''),$valor);
+        return (float)str_replace(array(','),array('.'),$value);
     }
 
 }

@@ -45,7 +45,7 @@ class Titulo
      * @param float $precoCompra
      * @param float $precoVenda
      */
-    public function __construct($titulo, \DateTime $vencimento, $rentabilidade, $rentabilidadeResgate, $precoCompra, $precoVenda)
+    public function __construct($titulo, \DateTime $vencimento = null, $rentabilidade = null, $rentabilidadeResgate = null, $precoCompra = null, $precoVenda = null)
     {
         $this->titulo = $titulo;
         $this->vencimento = $vencimento;
@@ -101,6 +101,66 @@ class Titulo
     public function getPrecoVenda()
     {
         return $this->precoVenda;
+    }
+
+    /**
+     * @param string $titulo
+     * @return Titulo
+     */
+    public function setTitulo($titulo)
+    {
+        $this->titulo = $titulo;
+        return $this;
+    }
+
+    /**
+     * @param \DateTime $vencimento
+     * @return Titulo
+     */
+    public function setVencimento($vencimento)
+    {
+        $this->vencimento = $vencimento;
+        return $this;
+    }
+
+    /**
+     * @param float $rentabilidade
+     * @return Titulo
+     */
+    public function setRentabilidade($rentabilidade)
+    {
+        $this->rentabilidade = $rentabilidade;
+        return $this;
+    }
+
+    /**
+     * @param float $rentabilidadeResgate
+     * @return Titulo
+     */
+    public function setRentabilidadeResgate($rentabilidadeResgate)
+    {
+        $this->rentabilidadeResgate = $rentabilidadeResgate;
+        return $this;
+    }
+
+    /**
+     * @param float $precoCompra
+     * @return Titulo
+     */
+    public function setPrecoCompra($precoCompra)
+    {
+        $this->precoCompra = $precoCompra;
+        return $this;
+    }
+
+    /**
+     * @param float $precoVenda
+     * @return Titulo
+     */
+    public function setPrecoVenda($precoVenda)
+    {
+        $this->precoVenda = $precoVenda;
+        return $this;
     }
 
 
