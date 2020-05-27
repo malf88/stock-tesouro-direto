@@ -12,6 +12,6 @@ services:
     volumes:
       - ./:/var/www/
     ports:
-      - 80:80
+      - 8090:80
     expose:
-      - 82
+      - 8090
