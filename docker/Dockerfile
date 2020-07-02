@@ -23,7 +23,6 @@ RUN apt-get update && apt-get -y upgrade && \
         curl \
         dom \
         fileinfo \
-        gd \
         hash \
         json \
         mbstring \
@@ -38,6 +37,11 @@ RUN apt-get update && apt-get -y upgrade && \
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/local/bin/composer
 
+RUN apt-get update -yqq \
+    && apt-get install -y --no-install-recommends openssl \
+    && sed -i 's,^\(MinProtocol[ ]*=\).*,\1'TLSv1.0',g' /etc/ssl/openssl.cnf \
+    && sed -i 's,^\(CipherString[ ]*=\).*,\1'DEFAULT@SECLEVEL=1',g' /etc/ssl/openssl.cnf\
+    && rm -rf /var/lib/apt/lists/*
 #RUN apt-get install -y nodejs
 # Enable apache mods.
 RUN a2enmod rewrite

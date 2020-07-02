@@ -60,7 +60,7 @@ class StockTesouroDireto
     const COLUNA_VALOR_MINIMO = 6;
     const COLUNA_VALOR_VENDA = 6;
     const COLUNA_VALOR_COMPRA = 8;
-    const URL = 'http://www.tesouro.fazenda.gov.br/tesouro-direto-precos-e-taxas-dos-titulos';
+    const URL = 'https://www.tesourodireto.com.br//json/br/com/b3/tesourodireto/service/api/treasurybondsinfo.json';
     /**
      * 0 - Ticker
      * 2 - Vencimento
@@ -76,50 +76,33 @@ class StockTesouroDireto
      */
 
     public function getTitulos(){
-        $client = new Client();
+        $client = new Client([
+            'verify' => false
+        ]);
         $r = $client->request('GET', self::URL);
         
-        $dom = new \DOMDocument();
 
-        $html = $r->getBody()->getContents();
-        libxml_use_internal_errors(true);
 
-        $dom->loadHTML($html);
-        libxml_clear_errors();
+        $jsonTitulos = \GuzzleHttp\json_decode($r->getBody()->getContents());
 
-        $domXPath = new \DOMXPath($dom);
+        $arrayTitulos = $jsonTitulos->response->TrsrBdTradgList;
 
 
 
-        $listVenda = $domXPath->query("//*[contains(@class, 'sanfonado')]//*[contains(@class, 'camposTesouroDireto')]");
-
-
-        $listCompra = $domXPath->query("//*[contains(@class, 'tabelaPrecoseTaxas') and not(contains(@class, 'sanfonado'))]//*[contains(@class, 'camposTesouroDireto')]");
 
         $tickers = [];
 
-        for($i = 0;$i < $listVenda->length;$i++){
-            $campos = $listVenda->item($i)->childNodes;
-            $ticker = $campos->item(self::COLUNA_TICKER)->nodeValue;
-            $vencimento = $this->revertDate($campos->item(self::COLUNA_VENCIMENTO)->nodeValue);
-            $taxa = $this->getFloatValue($campos->item(self::COLUNA_TAXA)->nodeValue);
+        foreach($arrayTitulos as $tituloTD){
+            $titulo = new Titulo();
+            $titulo->setTitulo($tituloTD->TrsrBd->nm);
+            $titulo->setVencimento(new \DateTime($tituloTD->TrsrBd->mtrtyDt));
+            $titulo->setPrecoCompra($tituloTD->TrsrBd->untrInvstmtVal);
+            $titulo->setPrecoVenda($tituloTD->TrsrBd->untrRedVal);
+            $titulo->setRentabilidade($tituloTD->TrsrBd->anulInvstmtRate);
+            $titulo->setRentabilidadeResgate($tituloTD->TrsrBd->anulRedRate);
 
-            $valor = $this->getFloatValue($campos->item(self::COLUNA_VALOR_VENDA)->nodeValue);
+            $tickers[$tituloTD->TrsrBd->nm] = $titulo;
 
-            $tickers[$ticker] = new Titulo($ticker,$vencimento,null,$taxa,0.00,$valor);
-
-        }
-
-
-        for($i = 0;$i < $listCompra->length;$i++){
-            $campos = $listCompra->item($i)->childNodes;
-
-            $taxa = $this->getFloatValue($campos->item(self::COLUNA_TAXA)->nodeValue);
-            $valor = $this->getFloatValue($campos->item(self::COLUNA_VALOR_COMPRA)->nodeValue);
-
-            $ticker = $campos->item(self::COLUNA_TICKER)->nodeValue;
-            $tickers[$ticker]->setRentabilidade($taxa);
-            $tickers[$ticker]->setPrecoCompra($valor);
         }
 
         return $tickers;
