@@ -45,7 +45,7 @@ class Titulo
      * @param float $precoCompra
      * @param float $precoVenda
      */
-    public function __construct($titulo, \DateTime $vencimento = null, $rentabilidade = null, $rentabilidadeResgate = null, $precoCompra = null, $precoVenda = null)
+    public function __construct($titulo = '', \DateTime $vencimento = null, $rentabilidade = null, $rentabilidadeResgate = null, $precoCompra = null, $precoVenda = null)
     {
         $this->titulo = $titulo;
         $this->vencimento = $vencimento;
